@@ -45,8 +45,8 @@ namespace LocalAccountsApp.Controllers
         public ActionResult Success(NsfwResult nsfw)
         {
             // Do not actually store your IAM credentials in code. EC2 Role is best
-            var awsKey = "AKIAWTXXFJ6NJ6U7KA6E";
-            var awsSecretKey = "LtP6Y3eFz7vde+nVAhj7svT9KCgDgE5/AsVs4Cnd";
+            var awsKey = "XXX";
+            var awsSecretKey = "XXX";
             var bucketRegion = Amazon.RegionEndpoint.USEast1;   // Your bucket region
             var s3 = new AmazonS3Client(awsKey, awsSecretKey, bucketRegion);
             var putRequest = new PutObjectRequest();
@@ -86,15 +86,15 @@ namespace LocalAccountsApp.Controllers
                         System.IO.File.Delete(path);
                     ImageFile.SaveAs(path);
                     // Configure API key authorization: Apikey
-                    Configuration.Default.AddApiKey("Apikey", "1c0df5d9-f2a0-4120-9f58-03e603b6cf53");
+                    Configuration.Default.AddApiKey("Apikey", "XXX");
 
                     var apiInstance = new NsfwApi();
                     var imageFile = new System.IO.FileStream(path, System.IO.FileMode.Open); // System.IO.Stream | Image file to perform the operation on.  Common file formats such as PNG, JPEG are supported.
                     System.IO.Stream stream = ImageFile.InputStream;
 
                     // Do not actually store your IAM credentials in code. EC2 Role is best
-                    var awsKey = "AKIAWTXXFJ6NJ6U7KA6E";
-                    var awsSecretKey = "LtP6Y3eFz7vde+nVAhj7svT9KCgDgE5/AsVs4Cnd";
+                    var awsKey = "XXX";
+                    var awsSecretKey = "XXX";
                     var bucketRegion = Amazon.RegionEndpoint.USEast1;   // Your bucket region
                     var s3 = new AmazonS3Client(awsKey, awsSecretKey, bucketRegion);
                     var putRequest = new PutObjectRequest();
@@ -184,7 +184,7 @@ namespace LocalAccountsApp.Controllers
 
             // Set your secret key. Remember to switch to your live secret key in production!
             // See your keys here: https://dashboard.stripe.com/account/apikeys
-            StripeConfiguration.ApiKey = "sk_test_51Gub1CD1GhlR3Zf7VQPN0qwG32O9gEEovXXduNah0f6xHHwVlaf9DsuNHzLOpDXgsLvyBCurxjA33xEOUJGTILCZ005ANR5mTY";
+            StripeConfiguration.ApiKey = "XXX";
 
             var options = new SessionCreateOptions
             {
@@ -197,7 +197,7 @@ namespace LocalAccountsApp.Controllers
 
             var config = new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.APSoutheast1 };
             //var credentials = new BasicAWSCredentials(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"), Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"));
-            var credentials = new BasicAWSCredentials("AKIAWTXXFJ6NF5DQAB7W", "CSoJtJGTFzZ7+AuJ4uJ4nwf9NgS4G7/d8NrtyNbw");
+            var credentials = new BasicAWSCredentials("XXX", "XXX");
             AmazonDynamoDBClient _dynamoDbClient = new AmazonDynamoDBClient(credentials, config);
             Table table = Table.LoadTable(_dynamoDbClient, "Users");
             var book = new Document();
@@ -230,7 +230,7 @@ namespace LocalAccountsApp.Controllers
         {
             string vaultName = "GlacialTest";
             string archiveToUpload = file;
-            var credentials = new BasicAWSCredentials("AKIAWTXXFJ6NF5DQAB7W", "CSoJtJGTFzZ7+AuJ4uJ4nwf9NgS4G7/d8NrtyNbw");
+            var credentials = new BasicAWSCredentials("XXX", "XXX");
             var manager = new ArchiveTransferManager(credentials, Amazon.RegionEndpoint.USEast1);
             string archiveId = manager.Upload(vaultName, "archive description", archiveToUpload).ArchiveId;
             

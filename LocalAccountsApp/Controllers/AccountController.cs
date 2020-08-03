@@ -337,7 +337,7 @@ namespace LocalAccountsApp.Controllers
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
             var config = new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.APSoutheast1 };
             //var credentials = new BasicAWSCredentials(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"), Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"));
-            var credentials = new BasicAWSCredentials("AKIAWTXXFJ6NF5DQAB7W", "CSoJtJGTFzZ7+AuJ4uJ4nwf9NgS4G7/d8NrtyNbw");
+            var credentials = new BasicAWSCredentials("XXX", "XXX");
             AmazonDynamoDBClient _dynamoDbClient = new AmazonDynamoDBClient(credentials, config);
             Table table = Table.LoadTable(_dynamoDbClient, "Users2");
             var book = new Document();
@@ -353,7 +353,7 @@ namespace LocalAccountsApp.Controllers
             {
                 //var config = new AmazonDynamoDBConfig { RegionEndpoint = RegionEndpoint.APSoutheast1 };
                 ////var credentials = new BasicAWSCredentials(Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"), Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY"));
-                //var credentials = new BasicAWSCredentials("AKIAWTXXFJ6NF5DQAB7W", "CSoJtJGTFzZ7+AuJ4uJ4nwf9NgS4G7/d8NrtyNbw");
+                //var credentials = new BasicAWSCredentials("XXX", "XXX");
                 //AmazonDynamoDBClient _dynamoDbClient = new AmazonDynamoDBClient(credentials, config);
                 //Table table = Table.LoadTable(_dynamoDbClient, "Users2");
                 //var book = new Document();
